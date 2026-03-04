@@ -1,35 +1,36 @@
-
 // backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
-app.use(express.static('Public'));
-app.use('/uploads', express.static('uploads')); // Serve images
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'Public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
+// Root route (VERY IMPORTANT for Vercel)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public', 'index.html'));
+});
+
+// Test API route
 app.get('/api/ping', (req, res) => {
   res.json({ message: 'ECOM backend is alive 🔥' });
 });
 
-// MongoDB Connect
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB error:', err));
+// MongoDB Connect (only connect if URI exists)
+if (process.env.MONGO_URI) {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB error:', err));
+}
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
+// IMPORTANT: Export app for Vercel
+module.exports = app;
