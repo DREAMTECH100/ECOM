@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOM - Order Successful</title>
+ <style>
+    
+.success-body {
+  background: linear-gradient(to right, #f0fefb, #dcf5ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.success-container {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-left: 250px;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeInUp 1s ease;
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #00c897;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  animation: popIn 0.5s ease;
+}
+
+.success-container h1 {
+  margin-bottom: 10px;
+  color: #00a86b;
+}
+
+.success-container p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.order-summary p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.success-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: #00a86b;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #007f5a;
+}
+
+.btn-outline {
+  padding: 12px 24px;
+  border: 2px solid #00a86b;
+  color: #00a86b;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #00a86b;
+  color: white;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+ </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="success-body">
+
+  <div class="success-container animate">
+    <div class="checkmark-circle">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h1>Payment Successful 🎉</h1>
+    <p>Your order has been placed. We’ll send you a confirmation email shortly.</p>
+    
+    <div class="order-summary">
+      <p><strong>Order ID:</strong> #ECOM123456</p>
+      <p><strong>Total Paid:</strong> ₦45,000</p>
+      <p><strong>Payment Method:</strong> Paystack</p>
+    </div>
+
+    <div class="success-actions">
+      <a href="shop.html" class="btn">Continue Shopping</a>
+      <a href="dashboard.html" class="btn-outline">View My Orders</a>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Confetti burst
+    const duration = 3 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      confetti(Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: Math.random(), y: Math.random() - 0.2 }
+      }));
+    }, 250);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOM - Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ECOM</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="active">Cart 🛒</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <h1>Your Cart</h1>
+    <div class="cart-container">
+      <section class="cart-items animate" id="cartItems">
+        <!-- Example Item -->
+        <div class="cart-item">
+          <img src="https://via.placeholder.com/100" alt="Product">
+          <div class="item-details">
+            <h3>Smartphone X</h3>
+            <p>$499</p>
+            <div class="quantity">
+              <button onclick="updateCartQty(this, -1)">-</button>
+              <input type="number" value="1" readonly>
+              <button onclick="updateCartQty(this, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeCartItem(this)">✖</button>
+        </div>
+        <!-- Repeat dynamically -->
+      </section>
+
+      <aside class="cart-summary animate">
+        <h3>Order Summary</h3>
+        <p>Subtotal: <span id="subtotal">$499</span></p>
+        <p>Shipping: <span>$0</span></p>
+        <hr>
+        <p><strong>Total: <span id="total">$499</span></strong></p>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ECOM. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

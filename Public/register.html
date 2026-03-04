@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOM - Register</title>
+ <style>
+   body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00a86b;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00a86b;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #00a86b, #56c596);
+  color:white ;
+  padding: 100px 40px;
+  text-align: center;
+  animation: slideIn 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  background: white;
+  color: #00a86b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-text button:hover {
+  background: #eee;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+
+    .auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  animation: fadeInUp 1s ease;
+}
+
+.auth-card h2 {
+  margin-bottom: 10px;
+  color: #00a86b;
+}
+
+.auth-card p {
+  margin-bottom: 20px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-card input {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.auth-card button {
+  padding: 14px;
+  background: #00a86b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-card button:hover {
+  background: #007f5a;
+}
+
+.switch-link {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.switch-link a {
+  color: #00a86b;
+  text-decoration: none;
+}
+ </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ECOM</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="register.html" class="active">Register</a>
+    </nav>
+  </header>
+
+  <main class="auth-page animate">
+    <div class="auth-card">
+      <h2>Create an Account 📝</h2>
+      <p>Join the ECOM community</p>
+      <form id="registerForm">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
+        <p class="switch-link">Already have an account? <a href="login.html">Login here</a></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ECOM. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const inputs = document.querySelectorAll('#registerForm input');
+      const password = inputs[2].value;
+      const confirmPassword = inputs[3].value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+
+      // Submit to backend (later)
+      alert("Account created successfully! (Backend coming soon)");
+    });
+  </script>
+</body>
+</html>

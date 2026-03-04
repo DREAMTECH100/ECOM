@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOM - Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ECOM</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html" class="active">Checkout</a>
+    </nav>
+  </header>
+
+  <main class="checkout-page animate">
+    <h1>Checkout</h1>
+    <div class="checkout-container">
+      <form id="checkoutForm" class="checkout-form">
+        <label>Full Name</label>
+        <input type="text" placeholder="John Doe" required />
+
+        <label>Email</label>
+        <input type="email" placeholder="john@example.com" required />
+
+        <label>Phone</label>
+        <input type="tel" placeholder="+2348123456789" required />
+
+        <label>Shipping Address</label>
+        <textarea placeholder="Street, City, State, ZIP" required></textarea>
+      </form>
+
+      <aside class="checkout-summary">
+        <h3>Order Summary</h3>
+        <p>Total Amount:</p>
+        <h2 id="checkoutTotal">$0.00</h2>
+        <button onclick="payWithPaystack()">Pay Now</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ECOM. All rights reserved.</p>
+  </footer>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

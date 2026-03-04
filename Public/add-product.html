@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Product - ECOM Admin</title>
+  
+  <style>
+    /* General Page Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header.navbar {
+      background: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #00a86b;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      color: #00a86b;
+      font-weight: 600;
+    }
+
+    .admin-panel {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      flex: 1;
+    }
+
+    .admin-panel h1 {
+      margin-bottom: 10px;
+      color: #00a86b;
+    }
+
+    .subhead {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .form-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-card input,
+    .form-card textarea {
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    .form-card input[type="file"] {
+      padding: 10px;
+      border: none;
+    }
+
+    .btn {
+      background-color: #00a86b;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #007f5a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: transparent;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body class="admin-body">
+  <header class="navbar">
+    <div class="logo">ECOM Admin</div>
+    <nav>
+      <a href="admin.html">Admin Panel</a>
+      <a href="add-product.html" class="active">Add Product</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <main class="admin-panel animate">
+    <h1>Add New Product 🛍️</h1>
+    <p class="subhead">Fill in product details below:</p>
+
+    <form id="addProductForm" class="form-card">
+      <input type="text" placeholder="Product Name" name="name" required />
+      <input type="number" placeholder="Price (₦)" name="price" required />
+      <input type="number" placeholder="Stock Quantity" name="stock" required />
+      <input type="file" accept="image/*" name="image" required />
+      <textarea placeholder="Product Description" name="description" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Submit Product</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 ECOM Admin. All rights reserved.</p>
+  </footer>
+
+  <script>
+  document.getElementById('addProductForm')?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/api/products', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('✅ Product added successfully!');
+        form.reset();
+      } else {
+        alert('❌ Failed to add product.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('🚨 Server error occurred.');
+    }
+  });
+
+
+  document.getElementById("addProductForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/products", {
+        method: "POST",
+        body: formData, // Sends the image and text as multipart/form-data
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("✅ Product added successfully!");
+        form.reset();
+        window.location.href = "admin.html"; // Redirect to admin panel
+      } else {
+        alert("❌ Error: " + result.message || "Something went wrong");
+      }
+    } catch (err) {
+      console.error("Add product failed:", err);
+      alert("❌ Network error while adding product");
+    }
+  });
+
+  </script>
+</body>
+</html>

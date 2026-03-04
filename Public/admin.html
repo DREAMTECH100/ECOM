@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOM Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <header class="navbar">
+    <div class="logo">ECOM Admin</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html" class="active">Admin Panel</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <main class="admin-panel animate">
+    <h1>Welcome, Admin 👑</h1>
+    <p class="subhead">Here’s a quick overview of your store</p>
+
+    <section class="admin-section">
+      <h2>Products</h2>
+      <div class="admin-grid">
+        <div class="admin-card">
+          <h3>Nike Air Max</h3>
+          <p>₦30,000</p>
+          <p>Stock: 12</p>
+        </div>
+        <div class="admin-card">
+          <h3>Samsung Earbuds</h3>
+          <p>₦25,000</p>
+          <p>Stock: 7</p>
+        </div>
+        <!-- Add more dynamic cards -->
+      </div>
+      <a href="add-product.html" class="btn">+ Add New Product</a>
+
+    </section>
+
+    <section class="admin-section">
+      <h2>Recent Orders</h2>
+      <div class="admin-grid">
+        <div class="admin-card">
+          <p><strong>Order ID:</strong> #ECOM00231</p>
+          <p><strong>User:</strong> John Doe</p>
+          <p><strong>Total:</strong> ₦55,000</p>
+          <p><strong>Status:</strong> <span class="status delivered">Delivered</span></p>
+        </div>
+        <div class="admin-card">
+          <p><strong>Order ID:</strong> #ECOM00232</p>
+          <p><strong>User:</strong> Jane Smith</p>
+          <p><strong>Total:</strong> ₦19,500</p>
+          <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ECOM Admin. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
