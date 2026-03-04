@@ -3,58 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECOM - Product Details</title>
+  <title>Noir Ambre | Noir Atelier</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">ECOM</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="cart.html">Cart 🛒</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
 
-  <main class="product-page">
-    <section class="product-detail animate">
-      <div class="product-images">
-        <img src="https://via.placeholder.com/400" alt="Product" id="mainImage">
-        <div class="thumbs">
-          <img src="https://via.placeholder.com/100" onclick="switchImage(this)">
-          <img src="https://via.placeholder.com/100/111" onclick="switchImage(this)">
-          <img src="https://via.placeholder.com/100/222" onclick="switchImage(this)">
-        </div>
-      </div>
-      <div class="product-info">
-        <h1>Smartphone X</h1>
-        <p class="price">$499</p>
-        <div class="quantity">
-          <button onclick="updateQty(-1)">-</button>
-          <input type="number" value="1" id="qtyInput" readonly>
-          <button onclick="updateQty(1)">+</button>
-        </div>
-        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+<header class="navbar">
+  <div class="logo">NOIR ATELIER</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="cart.html">Bag</a>
+    <a href="login.html">Account</a>
+  </nav>
+</header>
 
-        <div class="tabs">
-          <button class="tab-btn active" onclick="switchTab('desc')">Description</button>
-          <button class="tab-btn" onclick="switchTab('reviews')">Reviews</button>
-        </div>
-        <div class="tab-content" id="descTab">
-          <p>This Smartphone X is the latest model with blazing speed, crisp display, and long battery life. Ideal for both professionals and casual users.</p>
-        </div>
-        <div class="tab-content" id="reviewsTab" style="display: none;">
-          <p>No reviews yet. Be the first to leave one!</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- HERO PRODUCT SECTION -->
+<section class="product-hero">
+  <div class="product-left">
+    <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1500&auto=format&fit=crop" alt="Noir Ambre">
+  </div>
 
-  <footer>
-    <p>© 2025 ECOM. All rights reserved.</p>
-  </footer>
+  <div class="product-right">
+    <h1>NOIR AMBRE</h1>
+    <p class="product-tagline">An intimate composition of smoke and gold.</p>
 
-  <script src="script.js"></script>
+    <div class="price">$320</div>
+
+    <button class="luxury-btn">Add to Bag</button>
+
+    <div class="notes">
+      <h3>FRAGRANCE NOTES</h3>
+      <p><strong>Top:</strong> Smoked Citrus</p>
+      <p><strong>Heart:</strong> Dark Amber Resin</p>
+      <p><strong>Base:</strong> Madagascar Vanilla · Aged Wood</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="product-story">
+  <div class="story-content">
+    <h2>THE EXPERIENCE</h2>
+    <p>
+      Noir Ambre opens in quiet intensity — a restrained burst of citrus wrapped in smoke.
+      As it settles, golden amber rises, warm and controlled.
+      The final dry down leaves a deep resin trail — deliberate, magnetic, unforgettable.
+    </p>
+  </div>
+</section>
+
+<!-- FULL WIDTH VISUAL -->
+<section class="product-visual">
+  <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600&auto=format&fit=crop" alt="Luxury Mood">
+</section>
+
+<footer>
+  <p>© 2026 Noir Atelier. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

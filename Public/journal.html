@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal | Noir Atelier</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">NOIR ATELIER</a>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="atelier.html">Atelier</a>
+    <a href="journal.html">Journal</a>
+    <a href="contact.html">Private Client</a>
+    <a href="bag.html">Bag</a>
+  </nav>
+</header>
+
+<section class="journal-hero">
+  <h1>THE JOURNAL</h1>
+</section>
+
+<section class="journal-grid">
+
+  <div class="journal-card">
+    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop" alt="Oud">
+    <h2>The Art of Oud</h2>
+    <p>Exploring one of perfumery’s rarest materials.</p>
+  </div>
+
+  <div class="journal-card">
+    <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop" alt="Atelier">
+    <h2>Inside the Atelier</h2>
+    <p>A glimpse into our creative process.</p>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Noir Atelier. All rights reserved.</p>
+</footer>
+
+<!-- THIS WAS MISSING -->
+<script>
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

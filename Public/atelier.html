@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Atelier | Noir Atelier</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">NOIR ATELIER</a>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="atelier.html">Atelier</a>
+    <a href="journal.html">Journal</a>
+    <a href="contact.html">Private Client</a>
+    <a href="bag.html">Bag</a>
+  </nav>
+</header>
+
+<section class="atelier-hero">
+  <h1>CRAFTED IN SHADOW</h1>
+</section>
+
+<section class="atelier-story">
+  <div class="story-left">
+    <h2>THE PHILOSOPHY</h2>
+  </div>
+  <div class="story-right">
+    <p>
+      Noir Atelier was conceived as an exploration of restraint. 
+      Each composition is built slowly — layer by layer — allowing silence, smoke, and texture to breathe.
+    </p>
+    <p>
+      We believe true luxury whispers. It does not compete.
+    </p>
+  </div>
+</section>
+
+<!-- FIXED IMAGE LINK -->
+<section class="atelier-visual">
+  <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop" alt="Luxury Studio">
+</section>
+
+<section class="atelier-quote">
+  <p>“A fragrance should linger in memory long after the room is empty.”</p>
+</section>
+
+<footer>
+  <p>© 2026 Noir Atelier. All rights reserved.</p>
+</footer>
+
+<!-- HAMBURGER FUNCTION (THIS WAS MISSING) -->
+<script>
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

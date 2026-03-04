@@ -3,53 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECOM - Home</title>
+  <title>NOIR ATELIER</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">ECOM</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="login.html">Login</a>
-      <a href="cart.html">Cart 🛒</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to ECOM</h1>
-      <p>Your ultimate shopping destination</p>
-      <button id="shopNowBtn">Shop Now</button>
+<header class="navbar">
+  <a href="index.html" class="logo">NOIR ATELIER</a>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="atelier.html">Atelier</a>
+    <a href="journal.html">Journal</a>
+    <a href="contact.html">Private Client</a>
+    <a href="bag.html">Bag</a>
+  </nav>
+</header>
+
+<!-- VIDEO HERO -->
+<!-- LUXURY SLIDESHOW HERO -->
+<section class="hero-slider">
+
+  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2000&auto=format&fit=crop');"></div>
+
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=2000&auto=format&fit=crop');"></div>
+
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1608571423539-e951c3b3f4b7?q=80&w=2000&auto=format&fit=crop');"></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-sub">PRIVATE BLEND</p>
+    <h1>NOIR ÉLIXIR</h1>
+    <p class="hero-desc">
+      A dark composition of rare woods, smoked amber and golden spice.
+    </p>
+    <a href="collection.html" class="luxury-btn">DISCOVER</a>
+  </div>
+
+</section>
+
+<!-- FEATURED FRAGRANCES -->
+<section class="featured">
+  <h2 class="section-title">THE COLLECTION</h2>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1000&auto=format&fit=crop" alt="Fragrance">
+      <h3>NOIR AMBRE</h3>
+      <p>$320</p>
     </div>
-  </section>
 
-  <section class="featured-products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card animate">
-        <img src="https://via.placeholder.com/200" alt="Product 1">
-        <h3>Product 1</h3>
-        <p>$25</p>
-      </div>
-      <div class="product-card animate">
-        <img src="https://via.placeholder.com/200" alt="Product 2">
-        <h3>Product 2</h3>
-        <p>$40</p>
-      </div>
-      <div class="product-card animate">
-        <img src="https://via.placeholder.com/200" alt="Product 3">
-        <h3>Product 3</h3>
-        <p>$60</p>
-      </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop" alt="Fragrance">
+      <h3>VELVET OUD</h3>
+      <p>$350</p>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2025 ECOM. All rights reserved.</p>
-  </footer>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1000&auto=format&fit=crop" alt="Fragrance">
+      <h3>GOLD RESERVE</h3>
+      <p>$390</p>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <h2 class="section-title">WHY NOIR ATELIER</h2>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <h3>Limited Production</h3>
+      <p>Each release is produced in small numbered batches to preserve exclusivity.</p>
+    </div>
+
+    <div class="highlight-card">
+      <h3>Rare Ingredients</h3>
+      <p>Oud, aged resins, smoked woods and hand-sourced oils from global artisans.</p>
+    </div>
+
+    <div class="highlight-card">
+      <h3>Private Clients</h3>
+      <p>Exclusive consultations and bespoke fragrance compositions.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="accessories-preview">
+  <h2 class="section-title">ACCESSORIES</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1000&auto=format&fit=crop" alt="Luxury Bag">
+      <h3>VELVET CLUTCH</h3>
+      <p>$420</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1000&auto=format&fit=crop" alt="Luxury Bracelet">
+      <h3>OBSIDIAN CUFF</h3>
+      <p>$280</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=1000&auto=format&fit=crop" alt="Luxury Heels">
+      <h3>NOIR HEELS</h3>
+      <p>$510</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial">
+  <div class="editorial-text">
+    <h2>CRAFTED IN SHADOW</h2>
+    <p>
+      Each fragrance is an exploration of contrast —
+      darkness illuminated by gold.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NOIR ATELIER. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
